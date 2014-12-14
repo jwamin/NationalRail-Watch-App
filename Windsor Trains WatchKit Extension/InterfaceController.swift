@@ -76,18 +76,94 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         table.setNumberOfRows(services.count, withRowType: "stationRow")
         for(var i=0;i<services.count;i++){
             let thisRow:row = self.table.rowControllerAtIndex(i)! as row
-            let station:String = services[i]["sname"]!
-            let time:String = services[i]["nextTrain"]!
-            thisRow.station!.setText(station)
-            thisRow.time!.setText(time)
             
-            let centralDate = getTrainTime(time)
-            
-            thisRow.trainTimer.setDate(centralDate)
-            
-            thisRow.trainTimer.start()
+            if let station:String = services[i]["sname"]{
+                thisRow.station!.setText(station)
+            }
+            if let time:String = services[i]["nextTrain"]{
+                let centralDate = getTrainTime(time)
+                thisRow.time!.setText(time)
+                thisRow.trainTimer.setDate(centralDate)
+                thisRow.trainTimer.start()
+            } else {
+                println("no time recieved")
+            }
             
         }
+    }
+    
+}
+
+class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
+
+    @IBOutlet weak var trainTime: WKInterfaceLabel!
+    
+    @IBOutlet weak var trainTimer: WKInterfaceTimer!
+    
+    var watchRequest = NationalRailRequest()
+    
+    var index = 0
+    
+    override init(context: AnyObject?) {
+        super.init(context: context)
+        watchRequest.delegate = self
+        wasInitialised()
+        watchRequest.trainRequest()
+    }
+    
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        NSLog("%@ will activate", self)
+        
+    }
+    
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        NSLog("%@ did deactivate", self)
+        super.didDeactivate()
+    }
+    
+    func returnDict(returnDictionary: [[String : String]]) {
+        reshowElements()
+        updateLabels(returnDictionary)
+    }
+    
+    func errorHappened(error: NSError) {
+        println("Error!")
+        println(error)
+    }
+    
+    func reshowElements(){
+        
+    }
+    
+    func wasInitialised() {
+        println("delegate is working... from Apple Watch!")
+    }
+    
+    func updateLabels(services:[[String : String]]) -> Void{
+        if let time:String = services[index]["nextTrain"]{
+            let centralDate = getTrainTime(time)
+            trainTime.setText(time)
+            trainTimer.setDate(centralDate)
+            trainTimer.start()
+        } else {
+            println("no time recieved")
+        }
+    }
+    
+}
+
+class PageViewController2 : PageViewController{
+    
+    
+    override init(context: AnyObject?) {
+        super.init(context: context)
+        watchRequest.delegate = self
+        wasInitialised()
+        watchRequest.trainRequest()
+        index = 1
     }
     
 }
