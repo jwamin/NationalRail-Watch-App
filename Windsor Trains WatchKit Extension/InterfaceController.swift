@@ -55,21 +55,17 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
     func errorHappened(error: NSError) {
         println("Error!")
         println(error)
-        //UIView.animateWithDuration(1.0, animations: {
             self.table.setAlpha(0.0)
             self.table.setHidden(true)
             self.errorLabel.setHidden(false)
             self.errorLabel.setAlpha(1.0)
-        //})
     }
     
     func reshowElements(){
-        //UIView.animateWithDuration(1.0, animations: {
             self.table.setAlpha(1.0)
             self.table.setHidden(false)
             self.errorLabel.setHidden(true)
             self.errorLabel.setAlpha(0.0)
-        //})
     }
     
     func wasInitialised() {
@@ -85,33 +81,11 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
             thisRow.station!.setText(station)
             thisRow.time!.setText(time)
             
-            let timeArray = time.componentsSeparatedByString(":")
-            
-            let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-            var centralDate = NSDate()
-            
-            let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
-            
-            let com = cal?.components(mostUnits , fromDate: centralDate)
-            
-            
-            let hours = timeArray[0].toInt()
-            
-            let minute = timeArray[1].toInt()
-            
-            
-            com?.setValue(hours!, forComponent: .HourCalendarUnit)
-            com?.setValue(minute!, forComponent: .MinuteCalendarUnit)
-            
-            
-            centralDate = NSCalendar.currentCalendar().dateFromComponents(com!)!
-            
+            let centralDate = getTrainTime(time)
             
             thisRow.trainTimer.setDate(centralDate)
             
             thisRow.trainTimer.start()
-            
-            
             
         }
     }

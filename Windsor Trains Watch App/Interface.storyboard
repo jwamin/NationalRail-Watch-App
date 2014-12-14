@@ -20,16 +20,16 @@
                         <table alignment="left" layout="vertical" id="zuo-qM-6hD">
                             <items>
                                 <tableRow identifier="stationRow" selectable="NO" id="BC4-0Y-9aj" customClass="row" customModule="Windsor_Trains_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="BN9-Xe-LZN">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" animationDuration="1" id="BN9-Xe-LZN">
                                         <items>
-                                            <group width="1" height="15" alignment="left" id="fd9-vD-ZKD">
+                                            <group width="1" height="15" alignment="left" animationDuration="1" id="fd9-vD-ZKD">
                                                 <items>
                                                     <label width="136" alignment="left" text="Station" id="al1-EF-aWD">
-                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                        <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     </label>
                                                 </items>
                                             </group>
-                                            <group width="1" alignment="left" id="cgO-4F-OL2">
+                                            <group width="1" alignment="left" animationDuration="1" id="cgO-4F-OL2">
                                                 <items>
                                                     <label alignment="left" text="Time" id="l09-ue-fan">
                                                         <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
@@ -39,7 +39,7 @@
                                                     </label>
                                                 </items>
                                             </group>
-                                            <group width="1" alignment="left" id="Io8-7X-r1g">
+                                            <group width="1" alignment="left" animationDuration="1" id="Io8-7X-r1g">
                                                 <items>
                                                     <timer width="105" alignment="right" textAlignment="right" id="vfv-77-hdB">
                                                         <fontDescription key="font" style="UICTFontTextStyleSubhead"/>

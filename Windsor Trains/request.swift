@@ -200,3 +200,29 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
 }
 
+func getTrainTime(timeString:String) -> NSDate{
+    let timeArray:[String] = timeString.componentsSeparatedByString(":")
+    
+    let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+    var date = NSDate()
+    
+    let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
+    
+    let com = cal?.components(mostUnits , fromDate: date)
+    
+    
+    let hours = timeArray[0].toInt()
+    
+    let minute = timeArray[1].toInt()
+    
+    
+    com?.setValue(hours!, forComponent: .HourCalendarUnit)
+    com?.setValue(minute!, forComponent: .MinuteCalendarUnit)
+    
+    
+    date = NSCalendar.currentCalendar().dateFromComponents(com!)!
+    
+    return date
+}
+
+
