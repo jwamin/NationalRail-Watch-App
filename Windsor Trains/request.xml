@@ -1,0 +1,15 @@
+<!-- https://lite.realtime.nationalrail.co.uk/OpenLDBWS/ldb6.asmx -->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://thalesgroup.com/RTTI/2013-11-28/Token/types" xmlns:ldb="http://thalesgroup.com/RTTI/2014-02-20/ldb/">
+   <soapenv:Header>
+      <typ:AccessToken>
+         <typ:TokenValue>%@</typ:TokenValue>
+      </typ:AccessToken>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ldb:GetDepartureBoardRequest>
+         <ldb:numRows>1</ldb:numRows>
+         <ldb:crs>%@</ldb:crs>
+      </ldb:GetDepartureBoardRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
