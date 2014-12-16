@@ -32,7 +32,7 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         super.init(context: context)
         watchRequest.delegate = self
         wasInitialised()
-        watchRequest.trainRequest()
+        watchRequest.trainRequest(noOfRequests: "5")
     }
     
     override func willActivate() {

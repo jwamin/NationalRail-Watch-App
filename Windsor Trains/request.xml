@@ -8,7 +8,7 @@
    </soapenv:Header>
    <soapenv:Body>
       <ldb:GetDepartureBoardRequest>
-         <ldb:numRows>1</ldb:numRows>
+         <ldb:numRows>%@</ldb:numRows>
          <ldb:crs>%@</ldb:crs>
       </ldb:GetDepartureBoardRequest>
    </soapenv:Body>
