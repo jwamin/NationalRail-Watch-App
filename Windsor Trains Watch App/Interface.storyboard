@@ -76,14 +76,16 @@
             <objects>
                 <controller identifier="central" id="kOX-Yz-5sr" customClass="PageViewController" customModule="Windsor_Trains_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Windsor &amp; Eton Central" textAlignment="center" id="cMG-u2-Cqr">
-                            <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                        <label width="98" alignment="center" text="Windsor &amp; Eton Central" textAlignment="center" numberOfLines="2" id="cMG-u2-Cqr">
+                            <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                         </label>
-                        <label alignment="center" text="23:21" id="gRe-f8-HMW">
+                        <label height="40" alignment="center" text="23:21" id="gRe-f8-HMW">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label alignment="center" text="in" id="w7i-MN-Gwh"/>
-                        <timer height="41" alignment="center" textAlignment="center" id="oMk-qw-KMG">
+                        <label width="105" alignment="center" text="Doors slam in..." id="w7i-MN-Gwh">
+                            <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        </label>
+                        <timer alignment="center" textAlignment="center" id="oMk-qw-KMG">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
@@ -138,14 +140,16 @@
             <objects>
                 <controller identifier="riverside" id="bXh-ib-J0c" customClass="PageViewController2" customModule="Windsor_Trains_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Windsor &amp; Eton Riverside" textAlignment="center" id="HIr-9T-vyo">
-                            <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                        <label alignment="center" text="Windsor &amp; Eton Riverside" textAlignment="center" numberOfLines="2" id="HIr-9T-vyo">
+                            <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                         </label>
-                        <label alignment="center" text="23:21" id="Gce-du-RKm">
+                        <label height="42" alignment="center" text="23:21" id="Gce-du-RKm">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label alignment="center" text="in" id="y1v-el-VWV"/>
-                        <timer height="41" alignment="center" textAlignment="center" id="ejb-SJ-vc8">
+                        <label width="105" alignment="center" text="Doors slam in..." id="MyB-xz-aS8">
+                            <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        </label>
+                        <timer alignment="center" textAlignment="center" id="ejb-SJ-vc8">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
