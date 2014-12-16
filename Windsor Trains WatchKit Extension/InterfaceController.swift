@@ -74,13 +74,14 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
     
     func createTable(services:[[String:String]]) -> Void{
         table.setNumberOfRows(services.count, withRowType: "stationRow")
-        for(var i=0;i<services.count;i++){
-            let thisRow:row = self.table.rowControllerAtIndex(i)! as row
+        for (index,service) in enumerate(services){
             
-            if let station:String = services[i]["sname"]{
+            let thisRow:row = self.table.rowControllerAtIndex(index)! as row
+            
+            if let station:String = services[index]["sname"]{
                 thisRow.station!.setText(station)
             }
-            if let time:String = services[i]["nextTrain"]{
+            if let time:String = services[index]["nextTrain"]{
                 let centralDate = getTrainTime(time)
                 thisRow.time!.setText(time)
                 thisRow.trainTimer.setDate(centralDate)
@@ -98,6 +99,13 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
 
     @IBOutlet weak var trainTime: WKInterfaceLabel!
     
+    @IBAction func forceRefresh() {
+        watchRequest.trainRequest()
+    }
+    
+    @IBAction func listView() {
+        presentControllerWithName("list", context: self)
+    }
     @IBOutlet weak var trainTimer: WKInterfaceTimer!
     
     var watchRequest = NationalRailRequest()

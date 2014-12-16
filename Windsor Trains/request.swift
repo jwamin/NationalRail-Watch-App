@@ -206,7 +206,7 @@ func getTrainTime(timeString:String) -> NSDate{
     let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
     var date = NSDate()
     
-    let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
+    let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit 
     
     let com = cal?.components(mostUnits , fromDate: date)
     

@@ -60,9 +60,20 @@ var timeArray = ["08:22", "23:41"]
 
 
 
+            
+   let     services  =  [["sname": "Windsor & Eton Central", "nextTrain": "05:48"], ["sname": "Windsor & Eton Riverside", "nextTrain": "05:53"]]
 
+var indices:[Int] = []
 
+for service in services{
+    var tempArray = services as NSArray
+    indices.append(tempArray.indexOfObject(service))
+    
+    find(services,service)
+    
+}
 
+indices
 
 
 

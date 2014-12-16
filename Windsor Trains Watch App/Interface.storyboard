@@ -8,7 +8,7 @@
         <!--NeXTrain-->
         <scene sceneID="uda-Gi-mdH">
             <objects>
-                <controller title="NeXTrain" animationDuration="1" id="6MB-pO-SBm" customClass="MainController" customModule="Windsor_Trains_WatchKit_Extension">
+                <controller identifier="list" title="NeXTrain" animationDuration="1" id="6MB-pO-SBm" customClass="MainController" customModule="Windsor_Trains_WatchKit_Extension">
                     <items>
                         <label alignment="left" hidden="YES" alpha="0.0" text="Connection Error" id="dWF-aJ-pfh">
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,7 +69,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="156" y="345"/>
         </scene>
         <!--central-->
         <scene sceneID="y1e-av-LPO">
@@ -87,6 +87,20 @@
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
+                    <menu key="menu" id="2Ju-P9-SFZ">
+                        <items>
+                            <menuItem title="Refresh" icon="repeat" id="GyQ-gn-l88">
+                                <connections>
+                                    <action selector="forceRefresh" destination="kOX-Yz-5sr" id="kPe-fH-UO4"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="List View" icon="info" id="V15-Hh-PSE">
+                                <connections>
+                                    <action selector="listView" destination="kOX-Yz-5sr" id="VQY-xG-A7S"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="trainTime" destination="gRe-f8-HMW" id="kKj-pp-atl"/>
                         <outlet property="trainTimer" destination="oMk-qw-KMG" id="kp0-Lv-oYc"/>
@@ -135,6 +149,20 @@
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
+                    <menu key="menu" id="Oe5-VO-ZDV">
+                        <items>
+                            <menuItem title="Menu Item" icon="repeat" id="eFc-e8-cq9">
+                                <connections>
+                                    <action selector="forceRefresh" destination="bXh-ib-J0c" id="iJ6-v2-frG"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="List View" icon="info" id="5Zt-WG-O1f">
+                                <connections>
+                                    <action selector="listView" destination="bXh-ib-J0c" id="R5o-5m-Vbs"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="trainTime" destination="Gce-du-RKm" id="E3k-Hl-izO"/>
                         <outlet property="trainTimer" destination="ejb-SJ-vc8" id="xkb-4T-yaZ"/>
