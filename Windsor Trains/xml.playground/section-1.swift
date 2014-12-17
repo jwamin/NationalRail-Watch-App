@@ -39,43 +39,48 @@ countElements(xmlString)
 
 var timeArray = ["08:22", "23:41"]
 
-            var cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-            var centralDate = NSDate()
+var cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+var centralDate = NSDate()
 
-              let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
+let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
 
-            var com = cal?.components(mostUnits , fromDate: centralDate)
-
-
-            var hours = timeArray[1].componentsSeparatedByString(":")[0].toInt()
+var com = cal?.components(mostUnits , fromDate: centralDate)
 
 
-            com?.setValue(hours!, forComponent: .HourCalendarUnit)
+var hours = timeArray[1].componentsSeparatedByString(":")[0].toInt()
 
 
-
-            centralDate = NSCalendar.currentCalendar().dateFromComponents(com!)!
-
-            println(centralDate)
+com?.setValue(hours!, forComponent: .HourCalendarUnit)
 
 
 
-            
-   let     services  =  [["sname": "Windsor & Eton Central", "nextTrain": "05:48"], ["sname": "Windsor & Eton Riverside", "nextTrain": "05:53"]]
+centralDate = NSCalendar.currentCalendar().dateFromComponents(com!)!
 
-var indices:[Int] = []
-
-for service in services{
-    var tempArray = services as NSArray
-    indices.append(tempArray.indexOfObject(service))
-    
-    find(services,service)
-    
-}
-
-indices
+println(centralDate)
 
 
+
+
+let     services  =  [["sname": "Windsor & Eton Central", "nextTrain": "05:48"], ["sname": "Windsor & Eton Riverside", "nextTrain": "05:53"]]
+
+//var indices:[Int] = []
+//
+//for service in services{
+//    var tempArray = services as NSArray
+//    indices.append(tempArray.indexOfObject(service))
+//
+//    find(services,service)
+//
+//}
+//
+//indices
+
+
+let     moreTrains:Array  =  [["sname": "Windsor & Eton Central", "trains": ["22:45","21.22"]], ["sname": "Windsor & Eton Riverside", "trains": ["23:45","01.22"]]]
+
+//let     moreTrainsCopy:Array  =  [["sname": "Windsor & Eton Central"]]
+//
+//var addArray:[String] = ["22:45","21.22"]
 
 
 

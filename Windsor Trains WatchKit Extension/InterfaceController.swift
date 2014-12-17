@@ -93,6 +93,10 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         }
     }
     
+    func gotTrainTimes(times: [String]) {
+        println(times)
+    }
+    
 }
 
 class PageViewController: WKInterfaceController, NationalRailRequestDelegate{

@@ -155,7 +155,7 @@
                     </items>
                     <menu key="menu" id="Oe5-VO-ZDV">
                         <items>
-                            <menuItem title="Menu Item" icon="repeat" id="eFc-e8-cq9">
+                            <menuItem title="Menu Item" icon="repeat" id="eFc-e8-cq9" userLabel="Refresh">
                                 <connections>
                                     <action selector="forceRefresh" destination="bXh-ib-J0c" id="iJ6-v2-frG"/>
                                 </connections>

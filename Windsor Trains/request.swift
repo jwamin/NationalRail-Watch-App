@@ -11,6 +11,7 @@ import Foundation
 @objc protocol NationalRailRequestDelegate{
     func returnDict(returnDictionary: [[String:String]])
     func wasInitialised()
+    optional func gotTrainTimes(times:[String])
     optional func errorHappened(error:NSError)
 }
 
