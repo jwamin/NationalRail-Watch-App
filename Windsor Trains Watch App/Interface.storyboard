@@ -69,7 +69,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="156" y="345"/>
+            <point key="canvasLocation" x="20" y="237"/>
         </scene>
         <!--central-->
         <scene sceneID="y1e-av-LPO">
@@ -110,7 +110,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="423" y="345"/>
+            <point key="canvasLocation" x="211" y="237"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -126,14 +126,32 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="34" y="471"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Windsor_Trains_Watch_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="282" y="471"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="oSL-tT-YQX">
+            <objects>
+                <controller id="juN-IL-UlV">
+                    <items>
+                        <label alignment="left" text="Central" id="Ubi-pZ-Zpg"/>
+                        <label width="136" alignment="left" text="Label" id="tL7-lK-L37">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <label alignment="left" text="Riverside" id="XHU-ok-1up"/>
+                        <label alignment="left" text="Label" id="m7w-rM-t6T">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="518" y="465"/>
         </scene>
         <!--riverside-->
         <scene sceneID="aA5-At-YRq">
@@ -141,15 +159,19 @@
                 <controller identifier="riverside" id="bXh-ib-J0c" customClass="PageViewController2" customModule="Windsor_Trains_WatchKit_Extension">
                     <items>
                         <label alignment="center" text="Windsor &amp; Eton Riverside" textAlignment="center" numberOfLines="2" id="HIr-9T-vyo">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                         </label>
                         <label height="42" alignment="center" text="23:21" id="Gce-du-RKm">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
                         <label width="105" alignment="center" text="Doors slam in..." id="MyB-xz-aS8">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         </label>
                         <timer alignment="center" textAlignment="center" id="ejb-SJ-vc8">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
@@ -165,15 +187,37 @@
                                     <action selector="listView" destination="bXh-ib-J0c" id="R5o-5m-Vbs"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Menu Item" icon="info" id="zvj-Gz-fJu" userLabel="Map">
+                                <connections>
+                                    <action selector="mapView" destination="bXh-ib-J0c" id="8f8-kO-vfF"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="trainTime" destination="Gce-du-RKm" id="E3k-Hl-izO"/>
                         <outlet property="trainTimer" destination="ejb-SJ-vc8" id="xkb-4T-yaZ"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="695" y="345"/>
+            <point key="canvasLocation" x="440" y="237.5"/>
+        </scene>
+        <!--WNR-->
+        <scene sceneID="aNj-dr-CxI">
+            <objects>
+                <controller identifier="riversideView" title="WNR" id="FEw-rf-BNX" customClass="MapController" customModule="Windsor_Trains_WatchKit_Extension">
+                    <items>
+                        <map alignment="left" id="BvQ-Jz-9vL"/>
+                        <label alignment="left" text="Label" id="Ku5-Ni-bUm"/>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="Ku5-Ni-bUm" id="4IQ-KW-K5n"/>
+                        <outlet property="map" destination="BvQ-Jz-9vL" id="oPa-6m-Nor"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="645" y="237"/>
         </scene>
     </scenes>
 </document>

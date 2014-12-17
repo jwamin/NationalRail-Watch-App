@@ -169,6 +169,9 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
 
 class PageViewController2 : PageViewController{
     
+    @IBAction func mapView() {
+        presentControllerWithName("riversideView", context: self)
+    }
     
     override init(context: AnyObject?) {
         super.init(context: context)
@@ -178,5 +181,56 @@ class PageViewController2 : PageViewController{
         index = 1
     }
     
+}
+
+class MapController: WKInterfaceController {
+
+    @IBOutlet weak var map: WKInterfaceMap!
+    @IBOutlet weak var label: WKInterfaceLabel!
+    
+    var stationString:String?
+    var lat:CLLocationDegrees?
+    var long:CLLocationDegrees?
+    
+    
+    override init(context: AnyObject?) {
+        super.init(context: context)
+        stationString = "Windsor & Eton Riverside"
+        lat = 51.485846
+        long = -0.606179
+    }
+    
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        NSLog("%@ will activate", self)
+        var lat:CLLocationDegrees = 51.485846
+        var long:CLLocationDegrees = -0.606179
+        
+        var latDelta:CLLocationDegrees = 0.005  // the bigger, the less zoomed
+        var longDelta:CLLocationDegrees = 0.005
+        
+        // lat/long for location, lat/long delta for zoom height
+        
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)  //amalgamate lat/long delta into map zoom heiget
+        
+        var point:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, long) // amalgamate lat/long numbers into coordinates
+        
+        var region: MKCoordinateRegion = MKCoordinateRegionMake(point, span) // create region object, which has all the stuff previously set in it
+        map.setCoordinateRegion(region)
+        label.setText(stationString)
+    }
+    
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        NSLog("%@ did deactivate", self)
+        super.didDeactivate()
+    }
+    
+
+
+    
+
 }
 
