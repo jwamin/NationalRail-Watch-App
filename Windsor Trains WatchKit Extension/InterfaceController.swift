@@ -32,7 +32,7 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         super.init(context: context)
         watchRequest.delegate = self
         wasInitialised()
-        watchRequest.trainRequest(noOfRequests: "5")
+        watchRequest.trainRequest(noOfRequests: 4)
     }
     
     override func willActivate() {
@@ -69,7 +69,7 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
     }
     
     func wasInitialised() {
-        println("delegate is working... from Apple Watch!")
+        println("delegate is working... from Apple Watch! main controller")
     }
     
     func createTable(services:[[String:String]]) -> Void{
@@ -151,7 +151,7 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
     }
     
     func wasInitialised() {
-        println("delegate is working... from Apple Watch!")
+        println("delegate is working... from Apple Watch page view 1!")
     }
     
     func updateLabels(services:[[String : String]]) -> Void{

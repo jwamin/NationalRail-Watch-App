@@ -11,21 +11,27 @@ import Foundation
 @objc protocol NationalRailRequestDelegate{
     func returnDict(returnDictionary: [[String:String]])
     func wasInitialised()
-    optional func gotTrainTimes(times:[String])
+    optional func gotTrainTimes(times:[[String]])
     optional func errorHappened(error:NSError)
 }
 
 class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegate {
-
+    
     var completedRequests = 0
     
     var requestNumber = 0
+    
+    var requestedRequests = 1
+    
+    var foundTrain = false
     
     var delegate:NationalRailRequestDelegate? = nil
     
     var trainServices:[[String:String]] = []
     
     var thisTrain:[String:String] = [:]
+    
+    var services:[[String]] = [[],[]]
     
     // [["sname":"Central","nextTrain":"22:25"],["sname":"SlamDoor","nextTrain":"23:05"]]
     var stations:[String] = ["WNC","WNR"]
@@ -34,11 +40,15 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
     var foundValue = String()
     
+    
+    
     var NationalrequestArray:[NSMutableURLRequest] = []
     
     var foundSname:Bool = false
     
     var parser = NSXMLParser()
+    
+    var returnStructure = TrainData()
     
     override init() {
         super.init()
@@ -49,43 +59,43 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     func parser(parser: NSXMLParser!, foundCharacters string: String!) {
         
         let workstring = string
-            if(!(workstring==" ")){
-                if(!(workstring=="\n")){
-                    foundValue += workstring
-                }
-                
-           }
+        if(!(workstring==" ")){
+            if(!(workstring=="\n")){
+                foundValue += workstring
+            }
+            
+        }
         
     }
     
     
-    func trainRequest(noOfRequests:String = oneRequest) -> Void{
-        
+    func trainRequest(noOfRequests:Int = oneRequest) -> Void{
+        requestedRequests = noOfRequests
         for station in stations{
-        
-        var file:String! = NSBundle.mainBundle().pathForResource("request", ofType: "xml")
+            
+            var file:String! = NSBundle.mainBundle().pathForResource("request", ofType: "xml")
             let d:NSData! = NSData(contentsOfFile: file)
-        
+            
             let newString:NSString! = NSString(data: d, encoding: NSUTF8StringEncoding)
-        
-        var myStationCode = station
-        var requestInt = String(noOfRequests)
-        let finalstring = NSString(format: newString, ApiKey, requestInt, myStationCode)
-        
+            
+            var myStationCode = station
+            var requestInt = String(noOfRequests)
+            let finalstring = NSString(format: newString, ApiKey, requestInt, myStationCode)
+            
             let finaldata = finalstring.dataUsingEncoding(NSUTF8StringEncoding)!
-        
-        //println(finalstring)
-        
+            
+            //println(finalstring)
+            
             let url:NSURL! = NSURL(string: "https://lite.realtime.nationalrail.co.uk/OpenLDBWS/ldb6.asmx")
-        
-        var request = NSMutableURLRequest(URL: url, cachePolicy:NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 10)
+            
+            var request = NSMutableURLRequest(URL: url, cachePolicy:NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 10)
             let length = finaldata.length
-        
-        request.HTTPMethod = "POST"
-        request.setValue("text/xml", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = finaldata
-        
-        NationalrequestArray.append(request)
+            
+            request.HTTPMethod = "POST"
+            request.setValue("text/xml", forHTTPHeaderField: "Content-Type")
+            request.HTTPBody = finaldata
+            
+            NationalrequestArray.append(request)
         }
         startRequests()
     }
@@ -95,7 +105,7 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     }
     
     func continueRequests() -> Void{
-       NSURLConnection(request: NationalrequestArray[1], delegate: self)
+        NSURLConnection(request: NationalrequestArray[1], delegate: self)
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection){
@@ -114,7 +124,7 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
     func connection(connection: NSURLConnection, didReceiveData data: NSData) {
         let returnedData = NSString(data: data, encoding: NSUTF8StringEncoding)!
-        println(returnedData)
+        //println(returnedData)
         parserInit(data)
     }
     
@@ -133,16 +143,16 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     func parserDidEndDocument(parser: NSXMLParser!) {
         completedRequests++
         println("ended")
-        //println(dict)
-        //println(collection)
         trainServices.append(thisTrain)
         thisTrain = [:]
         foundSname = false
-        println(trainServices)
-        
+        foundTrain = false
         requestNumber++
         if (completedRequests==2){
+            println(trainServices)
+            println(services)
             delegate?.returnDict(trainServices)
+            services = [[],[]]
             trainServices = []
             completedRequests=0
             requestNumber=0
@@ -156,14 +166,18 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
         
         if(elementName=="std"){
-            thisTrain["nextTrain"] = foundValue
+            if (foundTrain != true){
+                thisTrain["nextTrain"] = foundValue
+                foundTrain=true
+            }
+            services[requestNumber].append(foundValue)
+            println(services)
         } else if (elementName=="locationName" && !foundSname){
-        thisTrain["sname"] = foundValue
+            thisTrain["sname"] = foundValue
             foundSname = true
         }
         
         foundValue = String()
-        
         
     }
     
@@ -175,27 +189,26 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
 
 func getTrainTime(timeString:String) -> NSDate{
     let timeArray:[String] = timeString.componentsSeparatedByString(":")
-    
     let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
     var date = NSDate()
-    
-    let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit 
-    
+    let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit
     let com = cal?.components(mostUnits , fromDate: date)
-    
-    
     let hours = timeArray[0].toInt()
-    
     let minute = timeArray[1].toInt()
-    
-    
     com?.setValue(hours!, forComponent: .HourCalendarUnit)
     com?.setValue(minute!, forComponent: .MinuteCalendarUnit)
-    
-    
     date = NSCalendar.currentCalendar().dateFromComponents(com!)!
     
     return date
 }
 
-
+struct TrainData {
+    var trainServices:[[String:String]]
+    var trains:[String]
+    
+    init(){
+        trainServices = []
+        trains = []
+    }
+    
+}
