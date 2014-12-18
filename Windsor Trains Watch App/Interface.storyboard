@@ -187,7 +187,7 @@
                                     <action selector="listView" destination="bXh-ib-J0c" id="R5o-5m-Vbs"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Menu Item" icon="info" id="zvj-Gz-fJu" userLabel="Map">
+                            <menuItem title="Map" icon="share" id="zvj-Gz-fJu" userLabel="Map">
                                 <connections>
                                     <action selector="mapView" destination="bXh-ib-J0c" id="8f8-kO-vfF"/>
                                 </connections>
