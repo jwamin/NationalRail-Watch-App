@@ -69,7 +69,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="20" y="237"/>
+            <point key="canvasLocation" x="-1" y="133"/>
         </scene>
         <!--central-->
         <scene sceneID="y1e-av-LPO">
@@ -82,7 +82,7 @@
                         <label height="40" alignment="center" text="23:21" id="gRe-f8-HMW">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label width="105" alignment="center" text="Doors slam in..." id="w7i-MN-Gwh">
+                        <label width="136" alignment="center" text="Doors will slam in..." id="w7i-MN-Gwh">
                             <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         </label>
                         <timer alignment="center" textAlignment="center" id="oMk-qw-KMG">
@@ -98,7 +98,12 @@
                             </menuItem>
                             <menuItem title="List View" icon="info" id="V15-Hh-PSE">
                                 <connections>
-                                    <action selector="listView" destination="kOX-Yz-5sr" id="VQY-xG-A7S"/>
+                                    <action selector="list" destination="kOX-Yz-5sr" id="bfn-1E-eWJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Map" icon="share" id="eFr-9q-bea" userLabel="Map">
+                                <connections>
+                                    <action selector="mapView" destination="kOX-Yz-5sr" id="YDq-4a-ttf"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -166,7 +171,7 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label width="105" alignment="center" text="Doors slam in..." id="MyB-xz-aS8">
+                        <label width="133" alignment="center" text="Doors will slam in..." id="MyB-xz-aS8">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         </label>
@@ -184,12 +189,12 @@
                             </menuItem>
                             <menuItem title="List View" icon="info" id="5Zt-WG-O1f">
                                 <connections>
-                                    <action selector="listView" destination="bXh-ib-J0c" id="R5o-5m-Vbs"/>
+                                    <action selector="list" destination="bXh-ib-J0c" id="wbh-3T-9WG"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Map" icon="share" id="zvj-Gz-fJu" userLabel="Map">
                                 <connections>
-                                    <action selector="mapView" destination="bXh-ib-J0c" id="8f8-kO-vfF"/>
+                                    <action selector="mapView" destination="bXh-ib-J0c" id="mZs-2R-7hM"/>
                                 </connections>
                             </menuItem>
                         </items>

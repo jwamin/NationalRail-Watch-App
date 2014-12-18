@@ -107,9 +107,13 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
         watchRequest.trainRequest()
     }
     
-    @IBAction func listView() {
+    @IBAction func list() {
         presentControllerWithName("list", context: self)
     }
+    @IBAction func mapView() {
+        presentControllerWithName("riversideView", context: self)
+    }
+
     @IBOutlet weak var trainTimer: WKInterfaceTimer!
     
     var watchRequest = NationalRailRequest()
@@ -122,6 +126,11 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
         wasInitialised()
         watchRequest.trainRequest()
     }
+    
+    
+    //override func contextForSegueWithIdentifier --> awa
+    
+
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -169,15 +178,10 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
 
 class PageViewController2 : PageViewController{
     
-    @IBAction func mapView() {
-        presentControllerWithName("riversideView", context: self)
-    }
+
     
     override init(context: AnyObject?) {
         super.init(context: context)
-        watchRequest.delegate = self
-        wasInitialised()
-        watchRequest.trainRequest()
         index = 1
     }
     
@@ -195,17 +199,25 @@ class MapController: WKInterfaceController {
     
     override init(context: AnyObject?) {
         super.init(context: context)
+        
+        if (context!.index==1){
         stationString = "Windsor & Eton Riverside"
+        self.setTitle("WNR")
         lat = 51.485846
         long = -0.606179
+        } else {
+            stationString = "Windsor & Eton Central"
+            self.setTitle("WNC")
+            lat = 51.483270
+            long = -0.610370
+        }
+        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         NSLog("%@ will activate", self)
-        var lat:CLLocationDegrees = 51.485846
-        var long:CLLocationDegrees = -0.606179
         
         var latDelta:CLLocationDegrees = 0.005  // the bigger, the less zoomed
         var longDelta:CLLocationDegrees = 0.005
@@ -215,7 +227,7 @@ class MapController: WKInterfaceController {
         
         var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)  //amalgamate lat/long delta into map zoom heiget
         
-        var point:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, long) // amalgamate lat/long numbers into coordinates
+        var point:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!) // amalgamate lat/long numbers into coordinates
         
         var region: MKCoordinateRegion = MKCoordinateRegionMake(point, span) // create region object, which has all the stuff previously set in it
         map.setCoordinateRegion(region)
