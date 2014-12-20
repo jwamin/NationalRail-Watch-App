@@ -25,6 +25,15 @@
 		FE7194841A38C10100BDF4E8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7194831A38C10100BDF4E8 /* Interface.storyboard */; };
 		FE7194861A38C10100BDF4E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE7194851A38C10100BDF4E8 /* Images.xcassets */; };
 		FE7194891A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FE71946C1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FEA75CB21A45BCC200A20EA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA75CB11A45BCC200A20EA6 /* Images.xcassets */; };
+		FEA75CB51A45BCC200A20EA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA75CB31A45BCC200A20EA6 /* LaunchScreen.xib */; };
+		FEA75CC11A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA75CC01A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift */; };
+		FEA75CC81A45BCE100A20EA6 /* request.xml in Resources */ = {isa = PBXBuildFile; fileRef = FED1F1241A38FD0900FD3E0C /* request.xml */; };
+		FEA75CC91A45BCE400A20EA6 /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E43311A3DB2CF0081CA4D /* key.swift */; };
+		FEA75CCA1A45BCEA00A20EA6 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BE6C51A3A2A3E0081C767 /* request.swift */; };
+		FEA75CCB1A45BCEE00A20EA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7194481A38C0E900BDF4E8 /* AppDelegate.swift */; };
+		FEA75CCC1A45BCF000A20EA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71944A1A38C0E900BDF4E8 /* ViewController.swift */; };
+		FEA75CCD1A45BCFF00A20EA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE71944C1A38C0E900BDF4E8 /* Main.storyboard */; };
 		FED1F1251A38FD0900FD3E0C /* request.xml in Resources */ = {isa = PBXBuildFile; fileRef = FED1F1241A38FD0900FD3E0C /* request.xml */; };
 		FED1F1261A38FD0900FD3E0C /* request.xml in Resources */ = {isa = PBXBuildFile; fileRef = FED1F1241A38FD0900FD3E0C /* request.xml */; };
 		FED1F1271A38FD0900FD3E0C /* request.xml in Resources */ = {isa = PBXBuildFile; fileRef = FED1F1241A38FD0900FD3E0C /* request.xml */; };
@@ -51,6 +60,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FE71946B1A38C10100BDF4E8;
 			remoteInfo = "Windsor Trains WatchKit Extension";
+		};
+		FEA75CBB1A45BCC200A20EA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE71943B1A38C0E900BDF4E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEA75CA51A45BCC200A20EA6;
+			remoteInfo = "Windsor Trains iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -93,6 +109,13 @@
 		FE7194831A38C10100BDF4E8 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		FE7194851A38C10100BDF4E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FE7194911A38C34D00BDF4E8 /* xml.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = xml.playground; path = "Windsor Trains/xml.playground"; sourceTree = SOURCE_ROOT; };
+		FEA75CA61A45BCC200A20EA6 /* Windsor Trains iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windsor Trains iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA75CA91A45BCC200A20EA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA75CB11A45BCC200A20EA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FEA75CB41A45BCC200A20EA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FEA75CBA1A45BCC200A20EA6 /* Windsor Trains iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Windsor Trains iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA75CBF1A45BCC200A20EA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA75CC01A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windsor_Trains_iOSTests.swift; sourceTree = "<group>"; };
 		FED1F1241A38FD0900FD3E0C /* request.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = request.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +142,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEA75CA31A45BCC200A20EA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA75CB71A45BCC200A20EA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +166,8 @@
 				FE71945B1A38C0E900BDF4E8 /* Windsor TrainsTests */,
 				FE7194701A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */,
 				FE7194801A38C10100BDF4E8 /* Windsor Trains Watch App */,
+				FEA75CA71A45BCC200A20EA6 /* Windsor Trains iOS */,
+				FEA75CBD1A45BCC200A20EA6 /* Windsor Trains iOSTests */,
 				FE71946D1A38C10100BDF4E8 /* Frameworks */,
 				FE7194441A38C0E900BDF4E8 /* Products */,
 			);
@@ -141,6 +180,8 @@
 				FE7194581A38C0E900BDF4E8 /* Windsor TrainsTests.xctest */,
 				FE71946C1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex */,
 				FE71947C1A38C10100BDF4E8 /* Windsor Trains Watch App.app */,
+				FEA75CA61A45BCC200A20EA6 /* Windsor Trains iOS.app */,
+				FEA75CBA1A45BCC200A20EA6 /* Windsor Trains iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +274,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FEA75CA71A45BCC200A20EA6 /* Windsor Trains iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FEA75CB11A45BCC200A20EA6 /* Images.xcassets */,
+				FEA75CB31A45BCC200A20EA6 /* LaunchScreen.xib */,
+				FEA75CA81A45BCC200A20EA6 /* Supporting Files */,
+			);
+			path = "Windsor Trains iOS";
+			sourceTree = "<group>";
+		};
+		FEA75CA81A45BCC200A20EA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEA75CA91A45BCC200A20EA6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEA75CBD1A45BCC200A20EA6 /* Windsor Trains iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEA75CC01A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift */,
+				FEA75CBE1A45BCC200A20EA6 /* Supporting Files */,
+			);
+			path = "Windsor Trains iOSTests";
+			sourceTree = "<group>";
+		};
+		FEA75CBE1A45BCC200A20EA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEA75CBF1A45BCC200A20EA6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +382,41 @@
 			productReference = FE71947C1A38C10100BDF4E8 /* Windsor Trains Watch App.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
+		FEA75CA51A45BCC200A20EA6 /* Windsor Trains iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA75CC61A45BCC200A20EA6 /* Build configuration list for PBXNativeTarget "Windsor Trains iOS" */;
+			buildPhases = (
+				FEA75CA21A45BCC200A20EA6 /* Sources */,
+				FEA75CA31A45BCC200A20EA6 /* Frameworks */,
+				FEA75CA41A45BCC200A20EA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Windsor Trains iOS";
+			productName = "Windsor Trains iOS";
+			productReference = FEA75CA61A45BCC200A20EA6 /* Windsor Trains iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEA75CB91A45BCC200A20EA6 /* Windsor Trains iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA75CC71A45BCC200A20EA6 /* Build configuration list for PBXNativeTarget "Windsor Trains iOSTests" */;
+			buildPhases = (
+				FEA75CB61A45BCC200A20EA6 /* Sources */,
+				FEA75CB71A45BCC200A20EA6 /* Frameworks */,
+				FEA75CB81A45BCC200A20EA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEA75CBC1A45BCC200A20EA6 /* PBXTargetDependency */,
+			);
+			name = "Windsor Trains iOSTests";
+			productName = "Windsor Trains iOSTests";
+			productReference = FEA75CBA1A45BCC200A20EA6 /* Windsor Trains iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,6 +439,13 @@
 					FE71947B1A38C10100BDF4E8 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					FEA75CA51A45BCC200A20EA6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FEA75CB91A45BCC200A20EA6 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = FEA75CA51A45BCC200A20EA6;
+					};
 				};
 			};
 			buildConfigurationList = FE71943E1A38C0E900BDF4E8 /* Build configuration list for PBXProject "Windsor Trains" */;
@@ -347,6 +465,8 @@
 				FE7194571A38C0E900BDF4E8 /* Windsor TrainsTests */,
 				FE71946B1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */,
 				FE71947B1A38C10100BDF4E8 /* Windsor Trains Watch App */,
+				FEA75CA51A45BCC200A20EA6 /* Windsor Trains iOS */,
+				FEA75CB91A45BCC200A20EA6 /* Windsor Trains iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +510,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEA75CA41A45BCC200A20EA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA75CCD1A45BCFF00A20EA6 /* Main.storyboard in Resources */,
+				FEA75CB51A45BCC200A20EA6 /* LaunchScreen.xib in Resources */,
+				FEA75CB21A45BCC200A20EA6 /* Images.xcassets in Resources */,
+				FEA75CC81A45BCE100A20EA6 /* request.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA75CB81A45BCC200A20EA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -423,6 +561,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEA75CA21A45BCC200A20EA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA75CCC1A45BCF000A20EA6 /* ViewController.swift in Sources */,
+				FEA75CCA1A45BCEA00A20EA6 /* request.swift in Sources */,
+				FEA75CC91A45BCE400A20EA6 /* key.swift in Sources */,
+				FEA75CCB1A45BCEE00A20EA6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA75CB61A45BCC200A20EA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA75CC11A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -441,6 +598,11 @@
 			target = FE71946B1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */;
 			targetProxy = FE7194871A38C10100BDF4E8 /* PBXContainerItemProxy */;
 		};
+		FEA75CBC1A45BCC200A20EA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEA75CA51A45BCC200A20EA6 /* Windsor Trains iOS */;
+			targetProxy = FEA75CBB1A45BCC200A20EA6 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -456,6 +618,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				FE7194521A38C0E900BDF4E8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FEA75CB31A45BCC200A20EA6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEA75CB41A45BCC200A20EA6 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -652,6 +822,66 @@
 			};
 			name = Release;
 		};
+		FEA75CC21A45BCC200A20EA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Windsor Trains iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEA75CC31A45BCC200A20EA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Windsor Trains iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEA75CC41A45BCC200A20EA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Windsor Trains iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Windsor Trains iOS.app/Windsor Trains iOS";
+			};
+			name = Debug;
+		};
+		FEA75CC51A45BCC200A20EA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Windsor Trains iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Windsor Trains iOS.app/Windsor Trains iOS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -699,6 +929,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FEA75CC61A45BCC200A20EA6 /* Build configuration list for PBXNativeTarget "Windsor Trains iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA75CC21A45BCC200A20EA6 /* Debug */,
+				FEA75CC31A45BCC200A20EA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FEA75CC71A45BCC200A20EA6 /* Build configuration list for PBXNativeTarget "Windsor Trains iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA75CC41A45BCC200A20EA6 /* Debug */,
+				FEA75CC51A45BCC200A20EA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
