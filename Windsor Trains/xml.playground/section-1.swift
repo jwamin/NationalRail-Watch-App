@@ -42,8 +42,7 @@ var timeArray = ["08:22", "23:41"]
 var cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
 var centralDate = NSDate()
 
-let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit
-
+let mostUnits: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit 
 var com = cal?.components(mostUnits , fromDate: centralDate)
 
 
@@ -57,6 +56,8 @@ com?.setValue(hours!, forComponent: .HourCalendarUnit)
 centralDate = NSCalendar.currentCalendar().dateFromComponents(com!)!
 
 println(centralDate)
+
+
 
 
 
