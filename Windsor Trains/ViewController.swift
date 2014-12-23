@@ -39,27 +39,38 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
     }
     
     func updateLabels(serviceInfo:[[String : String]]) -> Void{
+        if (time.textColor == UIColor.redColor()){
+            resetLabels()
+        }
+        var error = false
         
-        if (timer?.valid==true && timer2?.valid==true){
-            timer!.invalidate()
-            timer2!.invalidate()
+        disableTimers()
+        
+        if let centralReturnedTime = serviceInfo[0]["nextTrain"]
+        {
+            stationLabel.text = serviceInfo[0]["sname"]
+            time.text = centralReturnedTime
+            var centralTime = getTrainTime(serviceInfo[0]["nextTrain"]!)
+            let central:[AnyObject] = [centralTime,timerLabel1]
+                    timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: central, repeats: true)
+        } else {
+            error = true
         }
         
-        stationLabel.text = serviceInfo[0]["sname"]
-        time.text = serviceInfo[0]["nextTrain"]
+        if let riversideReturnedTime = serviceInfo[1]["nextTrain"]{
+            stationLabel2.text = serviceInfo[1]["sname"]
+            time2.text = riversideReturnedTime
+            var riversideTime = getTrainTime(serviceInfo[1]["nextTrain"]!)
+            let riverside:[AnyObject] = [riversideTime,timerLabel2]
+                 timer2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: riverside, repeats: true)
+        } else {
+            error = true
+        }
+   
         
-        stationLabel2.text = serviceInfo[1]["sname"]
-        time2.text = serviceInfo[1]["nextTrain"]
-        
-        var centralTime = getTrainTime(serviceInfo[0]["nextTrain"]!)
-        var riversideTime = getTrainTime(serviceInfo[1]["nextTrain"]!)
-        
-        let central:[AnyObject] = [centralTime,timerLabel1]
-        let riverside:[AnyObject] = [riversideTime,timerLabel2]
-
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: central, repeats: true)
-    
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: riverside, repeats: true)
+        if(error){
+            errorLabels()
+        }
         
     }
     
@@ -79,7 +90,6 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
     
     
     func timerProcess(timer:NSTimer) -> Void{
-        println("it works!")
         var service:AnyObject = timer.userInfo!
         var now = NSDate()
         
@@ -92,11 +102,41 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         var seconds:NSInteger = elapsedSeconds as Int % 60;
         var minutes:NSInteger = (elapsedSeconds as Int / 60) % 60;
         var hours:NSInteger = elapsedSeconds as Int / (60 * 60);
-        var result:NSString = NSString(format: "%02ld:%02ld", minutes, seconds)
+        var result:NSString = NSString(format: "%02i:%03i", minutes, seconds)
+        println(result)
         result = result.stringByReplacingOccurrencesOfString("-", withString: "")
         label.text = result
     }
     
+    func errorHappened(error: NSError) {
+        println(error)
+        errorLabels()
+    }
+    
+    func errorLabels() -> Void{
+        disableTimers()
+        var label : UILabel
+        for (var i=1;i<7;i++){
+            label = view.viewWithTag(i) as UILabel
+            label.text = "Error!"
+            label.textColor = UIColor.redColor()
+        }
+    }
+    
+    func resetLabels() -> Void{
+        var label : UILabel
+        for (var i=1;i<7;i++){
+            label = view.viewWithTag(i) as UILabel
+            label.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func disableTimers()->Void{
+        if (timer?.valid==true && timer2?.valid==true){
+            timer!.invalidate()
+            timer2!.invalidate()
+        }
+    }
     
 }
 
