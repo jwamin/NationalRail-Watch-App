@@ -36,6 +36,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         MyRequest.trainRequest()
         timer = NSTimer()
         timer2 = NSTimer()
+        resetLabels()
     }
     
     func updateLabels(serviceInfo:[[String : String]]) -> Void{
