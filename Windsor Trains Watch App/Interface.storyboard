@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kOX-Yz-5sr">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kOX-Yz-5sr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3734"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
         <!--NeXTrain-->
@@ -14,14 +14,14 @@
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <table alignment="left" layout="vertical" id="zuo-qM-6hD">
+                        <table alignment="left" id="zuo-qM-6hD">
                             <items>
                                 <tableRow identifier="stationRow" selectable="NO" id="BC4-0Y-9aj" customClass="row" customModule="Windsor_Trains_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" layout="vertical" animationDuration="1" id="BN9-Xe-LZN">
+                                    <group key="rootItem" width="1" height="58.5" alignment="left" animationDuration="1" layout="vertical" id="BN9-Xe-LZN">
                                         <items>
                                             <group width="1" height="15" alignment="left" animationDuration="1" id="fd9-vD-ZKD">
                                                 <items>
-                                                    <label alignment="left" text="Station" id="al1-EF-aWD">
+                                                    <label alignment="left" text="Station" minimumScaleFactor="0.50000000000000011" id="al1-EF-aWD">
                                                         <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     </label>
                                                 </items>
@@ -69,7 +69,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-1" y="133"/>
+            <point key="canvasLocation" x="693" y="465"/>
         </scene>
         <!--central-->
         <scene sceneID="y1e-av-LPO">
@@ -139,24 +139,6 @@
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Windsor_Trains_Watch_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="282" y="471"/>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="oSL-tT-YQX">
-            <objects>
-                <controller id="juN-IL-UlV">
-                    <items>
-                        <label alignment="left" text="Central" id="Ubi-pZ-Zpg"/>
-                        <label width="136" alignment="left" text="Label" id="tL7-lK-L37">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                        </label>
-                        <label alignment="left" text="Riverside" id="XHU-ok-1up"/>
-                        <label alignment="left" text="Label" id="m7w-rM-t6T">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                        </label>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="518" y="465"/>
         </scene>
         <!--riverside-->
         <scene sceneID="aA5-At-YRq">

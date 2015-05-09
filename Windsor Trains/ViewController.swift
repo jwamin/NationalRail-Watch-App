@@ -94,8 +94,8 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         var service:AnyObject = timer.userInfo!
         var now = NSDate()
         
-        var traintime = service[0] as NSDate
-        var label = service[1] as UILabel
+        var traintime = service[0] as! NSDate
+        var label = service[1] as! UILabel
         var elapsedSeconds:NSNumber = now.timeIntervalSinceDate(traintime)
         
         NSLog("Elaped seconds:%ld seconds",elapsedSeconds);
@@ -106,7 +106,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         var result:NSString = NSString(format: "%02i:%03i", minutes, seconds)
         println(result)
         result = result.stringByReplacingOccurrencesOfString("-", withString: "")
-        label.text = result
+        label.text = result as String
     }
     
     func errorHappened(error: NSError) {
@@ -118,7 +118,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         disableTimers()
         var label : UILabel
         for (var i=1;i<7;i++){
-            label = view.viewWithTag(i) as UILabel
+            label = view.viewWithTag(i) as! UILabel
             label.text = "Error!"
             label.textColor = UIColor.redColor()
         }
@@ -127,7 +127,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
     func resetLabels() -> Void{
         var label : UILabel
         for (var i=1;i<7;i++){
-            label = view.viewWithTag(i) as UILabel
+            label = view.viewWithTag(i) as! UILabel
             label.textColor = UIColor.blackColor()
         }
     }

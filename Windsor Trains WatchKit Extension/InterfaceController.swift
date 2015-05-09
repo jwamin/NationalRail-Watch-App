@@ -28,8 +28,11 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
     
     var watchRequest = NationalRailRequest()
 
-    override init(context: AnyObject?) {
-        super.init(context: context)
+
+    
+    
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         watchRequest.delegate = self
         wasInitialised()
         watchRequest.trainRequest(noOfRequests: 4)
@@ -76,14 +79,15 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         table.setNumberOfRows(services.count, withRowType: "stationRow")
         for (index,service) in enumerate(services){
             
-            let thisRow:row = self.table.rowControllerAtIndex(index)! as row
+            let thisRow:row = self.table.rowControllerAtIndex(index)! as! row
             
-            if let station:String = services[index]["sname"]{
-                thisRow.station!.setText(station)
+            if let station:String = service["sname"]{
+                println(station)
+                thisRow.station.setText(station)
             }
-            if let time:String = services[index]["nextTrain"]{
+            if let time:String = service["nextTrain"]{
                 let centralDate = getTrainTime(time)
-                thisRow.time!.setText(time)
+                thisRow.time.setText(time)
                 thisRow.trainTimer.setDate(centralDate)
                 thisRow.trainTimer.start()
             } else {
@@ -93,7 +97,7 @@ class MainController: WKInterfaceController,NationalRailRequestDelegate{
         }
     }
     
-    func gotTrainTimes(times: [String]) {
+    func gotTrainTimes(times: [[String]]) {
         println(times)
     }
     
@@ -120,8 +124,8 @@ class PageViewController: WKInterfaceController, NationalRailRequestDelegate{
     
     var index = 0
     
-    override init(context: AnyObject?) {
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         watchRequest.delegate = self
         wasInitialised()
         watchRequest.trainRequest()
@@ -180,8 +184,8 @@ class PageViewController2 : PageViewController{
     
 
     
-    override init(context: AnyObject?) {
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         index = 1
     }
     
@@ -197,8 +201,8 @@ class MapController: WKInterfaceController {
     var long:CLLocationDegrees?
     
     
-    override init(context: AnyObject?) {
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
         if (context!.index==1){
         stationString = "Windsor & Eton Riverside"
@@ -230,7 +234,7 @@ class MapController: WKInterfaceController {
         var point:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!) // amalgamate lat/long numbers into coordinates
         
         var region: MKCoordinateRegion = MKCoordinateRegionMake(point, span) // create region object, which has all the stuff previously set in it
-        map.setCoordinateRegion(region)
+        map.setRegion(region)
         label.setText(stationString)
     }
     

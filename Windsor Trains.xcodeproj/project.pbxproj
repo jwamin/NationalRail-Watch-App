@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE27A8AB1AFE932F00A5DCFC /* Windsor Trains WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FE71946C1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FE2E43321A3DB2CF0081CA4D /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E43311A3DB2CF0081CA4D /* key.swift */; };
 		FE2E43331A3DB2CF0081CA4D /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E43311A3DB2CF0081CA4D /* key.swift */; };
 		FE5BE6C61A3A2A3E0081C767 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BE6C51A3A2A3E0081C767 /* request.swift */; };
@@ -24,7 +25,6 @@
 		FE71947D1A38C10100BDF4E8 /* Windsor Trains Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = FE71947C1A38C10100BDF4E8 /* Windsor Trains Watch App.app */; };
 		FE7194841A38C10100BDF4E8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7194831A38C10100BDF4E8 /* Interface.storyboard */; };
 		FE7194861A38C10100BDF4E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE7194851A38C10100BDF4E8 /* Images.xcassets */; };
-		FE7194891A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FE71946C1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FEA75CB21A45BCC200A20EA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA75CB11A45BCC200A20EA6 /* Images.xcassets */; };
 		FEA75CB51A45BCC200A20EA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA75CB31A45BCC200A20EA6 /* LaunchScreen.xib */; };
 		FEA75CC11A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA75CC01A45BCC200A20EA6 /* Windsor_Trains_iOSTests.swift */; };
@@ -40,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FE27A8AC1AFE932F00A5DCFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE71943B1A38C0E900BDF4E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE71946B1A38C10100BDF4E8;
+			remoteInfo = "Windsor Trains WatchKit Extension";
+		};
 		FE7194591A38C0E900BDF4E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FE71943B1A38C0E900BDF4E8 /* Project object */;
@@ -54,13 +61,6 @@
 			remoteGlobalIDString = FE71947B1A38C10100BDF4E8;
 			remoteInfo = "Windsor Trains Watch App";
 		};
-		FE7194871A38C10100BDF4E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE71943B1A38C0E900BDF4E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE71946B1A38C10100BDF4E8;
-			remoteInfo = "Windsor Trains WatchKit Extension";
-		};
 		FEA75CBB1A45BCC200A20EA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FE71943B1A38C0E900BDF4E8 /* Project object */;
@@ -71,13 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FE7194901A38C10100BDF4E8 /* Embed App Extensions */ = {
+		FE27A8AE1AFE932F00A5DCFC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FE7194891A38C10100BDF4E8 /* Windsor Trains WatchKit Extension.appex in Embed App Extensions */,
+				FE27A8AB1AFE932F00A5DCFC /* Windsor Trains WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE27A8AF1AFE954D00A5DCFC /* Windsor Trains WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Windsor Trains WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		FE27A8B01AFE989500A5DCFC /* Windsor Trains.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Windsor Trains.entitlements"; sourceTree = "<group>"; };
 		FE2E43311A3DB2CF0081CA4D /* key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = key.swift; sourceTree = "<group>"; };
 		FE5BE6C51A3A2A3E0081C767 /* request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
 		FE7194431A38C0E900BDF4E8 /* Windsor Trains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windsor Trains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 		FE7194451A38C0E900BDF4E8 /* Windsor Trains */ = {
 			isa = PBXGroup;
 			children = (
+				FE27A8B01AFE989500A5DCFC /* Windsor Trains.entitlements */,
 				FE7194481A38C0E900BDF4E8 /* AppDelegate.swift */,
 				FE71944A1A38C0E900BDF4E8 /* ViewController.swift */,
 				FE5BE6C51A3A2A3E0081C767 /* request.swift */,
@@ -239,6 +242,7 @@
 		FE7194701A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FE27A8AF1AFE954D00A5DCFC /* Windsor Trains WatchKit Extension.entitlements */,
 				FE7194741A38C10100BDF4E8 /* InterfaceController.swift */,
 				FE7194761A38C10100BDF4E8 /* NotificationController.swift */,
 				FE7194781A38C10100BDF4E8 /* Images.xcassets */,
@@ -319,12 +323,12 @@
 				FE71943F1A38C0E900BDF4E8 /* Sources */,
 				FE7194401A38C0E900BDF4E8 /* Frameworks */,
 				FE7194411A38C0E900BDF4E8 /* Resources */,
-				FE7194901A38C10100BDF4E8 /* Embed App Extensions */,
+				FE27A8AE1AFE932F00A5DCFC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FE7194881A38C10100BDF4E8 /* PBXTargetDependency */,
+				FE27A8AD1AFE932F00A5DCFC /* PBXTargetDependency */,
 			);
 			name = "Windsor Trains";
 			productName = "Windsor Trains";
@@ -428,6 +432,12 @@
 				TargetAttributes = {
 					FE7194421A38C0E900BDF4E8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3C42F7N9CQ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FE7194571A38C0E900BDF4E8 = {
 						CreatedOnToolsVersion = 6.2;
@@ -435,9 +445,16 @@
 					};
 					FE71946B1A38C10100BDF4E8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3C42F7N9CQ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FE71947B1A38C10100BDF4E8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3C42F7N9CQ;
 					};
 					FEA75CA51A45BCC200A20EA6 = {
 						CreatedOnToolsVersion = 6.2;
@@ -583,6 +600,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FE27A8AD1AFE932F00A5DCFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE71946B1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */;
+			targetProxy = FE27A8AC1AFE932F00A5DCFC /* PBXContainerItemProxy */;
+		};
 		FE71945A1A38C0E900BDF4E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FE7194421A38C0E900BDF4E8 /* Windsor Trains */;
@@ -592,11 +614,6 @@
 			isa = PBXTargetDependency;
 			target = FE71947B1A38C10100BDF4E8 /* Windsor Trains Watch App */;
 			targetProxy = FE71947E1A38C10100BDF4E8 /* PBXContainerItemProxy */;
-		};
-		FE7194881A38C10100BDF4E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE71946B1A38C10100BDF4E8 /* Windsor Trains WatchKit Extension */;
-			targetProxy = FE7194871A38C10100BDF4E8 /* PBXContainerItemProxy */;
 		};
 		FEA75CBC1A45BCC200A20EA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -650,6 +667,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -692,6 +710,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -714,10 +733,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				CODE_SIGN_ENTITLEMENTS = "Windsor Trains/Windsor Trains.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Windsor Trains/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -725,10 +747,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				CODE_SIGN_ENTITLEMENTS = "Windsor Trains/Windsor Trains.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Windsor Trains/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -771,6 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -778,6 +804,7 @@
 				IBSC_MODULE = Windsor_Trains_WatchKit_Extension;
 				INFOPLIST_FILE = "Windsor Trains Watch App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -789,9 +816,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = Windsor_Trains_WatchKit_Extension;
 				INFOPLIST_FILE = "Windsor Trains Watch App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -801,6 +830,9 @@
 		FE71948E1A38C10100BDF4E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Windsor Trains WatchKit Extension/Windsor Trains WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -808,6 +840,7 @@
 				INFOPLIST_FILE = "Windsor Trains WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -815,9 +848,13 @@
 		FE71948F1A38C10100BDF4E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Windsor Trains WatchKit Extension/Windsor Trains WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: joss Manger (5T3V32KA23)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Windsor Trains WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -937,6 +974,7 @@
 				FEA75CC31A45BCC200A20EA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEA75CC71A45BCC200A20EA6 /* Build configuration list for PBXNativeTarget "Windsor Trains iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -945,6 +983,7 @@
 				FEA75CC51A45BCC200A20EA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
