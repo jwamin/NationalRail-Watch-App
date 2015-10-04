@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kOX-Yz-5sr">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kOX-Yz-5sr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--NeXTrain-->
@@ -82,7 +82,7 @@
                         <label height="40" alignment="center" text="23:21" id="gRe-f8-HMW">
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label width="136" alignment="center" text="Doors will slam in..." id="w7i-MN-Gwh">
+                        <label width="136" alignment="center" text="Doors will slam in..." textAlignment="center" id="w7i-MN-Gwh">
                             <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         </label>
                         <timer alignment="center" textAlignment="center" id="oMk-qw-KMG">
@@ -109,6 +109,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="label" destination="w7i-MN-Gwh" id="NU3-aA-XJr"/>
                         <outlet property="trainTime" destination="gRe-f8-HMW" id="kKj-pp-atl"/>
                         <outlet property="trainTimer" destination="oMk-qw-KMG" id="kp0-Lv-oYc"/>
                         <segue destination="bXh-ib-J0c" kind="relationship" relationship="nextPage" id="kpY-zB-5MS"/>
@@ -146,25 +147,25 @@
                 <controller identifier="riverside" id="bXh-ib-J0c" customClass="PageViewController2" customModule="Windsor_Trains_WatchKit_Extension">
                     <items>
                         <label alignment="center" text="Windsor &amp; Eton Riverside" textAlignment="center" numberOfLines="2" id="HIr-9T-vyo">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                         </label>
                         <label height="42" alignment="center" text="23:21" id="Gce-du-RKm">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </label>
-                        <label width="133" alignment="center" text="Doors will slam in..." id="MyB-xz-aS8">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <label width="133" alignment="center" text="Doors will slam in..." textAlignment="center" id="MyB-xz-aS8">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         </label>
                         <timer alignment="center" textAlignment="center" id="ejb-SJ-vc8">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="41"/>
                         </timer>
                     </items>
                     <menu key="menu" id="Oe5-VO-ZDV">
                         <items>
-                            <menuItem title="Menu Item" icon="repeat" id="eFc-e8-cq9" userLabel="Refresh">
+                            <menuItem title="Refresh" icon="repeat" id="eFc-e8-cq9" userLabel="Refresh">
                                 <connections>
                                     <action selector="forceRefresh" destination="bXh-ib-J0c" id="iJ6-v2-frG"/>
                                 </connections>
@@ -181,8 +182,9 @@
                             </menuItem>
                         </items>
                     </menu>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
+                        <outlet property="label" destination="MyB-xz-aS8" id="7xi-b2-jnO"/>
                         <outlet property="trainTime" destination="Gce-du-RKm" id="E3k-Hl-izO"/>
                         <outlet property="trainTimer" destination="ejb-SJ-vc8" id="xkb-4T-yaZ"/>
                     </connections>

@@ -51,7 +51,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         {
             stationLabel.text = serviceInfo[0]["sname"]
             time.text = centralReturnedTime
-            var centralTime = getTrainTime(serviceInfo[0]["nextTrain"]!)
+            let centralTime = getTrainTime(serviceInfo[0]["nextTrain"]!)
             let central:[AnyObject] = [centralTime,timerLabel1]
                     timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: central, repeats: true)
         } else {
@@ -61,7 +61,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
         if let riversideReturnedTime = serviceInfo[1]["nextTrain"]{
             stationLabel2.text = serviceInfo[1]["sname"]
             time2.text = riversideReturnedTime
-            var riversideTime = getTrainTime(serviceInfo[1]["nextTrain"]!)
+            let riversideTime = getTrainTime(serviceInfo[1]["nextTrain"]!)
             let riverside:[AnyObject] = [riversideTime,timerLabel2]
                  timer2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerProcess:"), userInfo: riverside, repeats: true)
         } else {
@@ -80,37 +80,37 @@ class ViewController: UIViewController, NSXMLParserDelegate, NSURLConnectionDele
     }
 
     func returnDict(returnDictionary: [[String : String]]) {
-        println("from delegate")
-        println(returnDictionary)
+        print("from delegate", terminator: "")
+        print(returnDictionary, terminator: "")
         updateLabels(returnDictionary)
     }
     
     func wasInitialised() {
-            println("delegate is working")
+            print("delegate is working", terminator: "")
     }
     
     
     func timerProcess(timer:NSTimer) -> Void{
-        var service:AnyObject = timer.userInfo!
-        var now = NSDate()
+        let service:AnyObject = timer.userInfo!
+        let now = NSDate()
         
-        var traintime = service[0] as! NSDate
-        var label = service[1] as! UILabel
-        var elapsedSeconds:NSNumber = now.timeIntervalSinceDate(traintime)
+        let traintime = service[0] as! NSDate
+        let label = service[1] as! UILabel
+        let elapsedSeconds:NSNumber = now.timeIntervalSinceDate(traintime)
         
         NSLog("Elaped seconds:%ld seconds",elapsedSeconds);
     
-        var seconds:NSInteger = elapsedSeconds as Int % 60;
-        var minutes:NSInteger = (elapsedSeconds as Int / 60) % 60;
-        var hours:NSInteger = elapsedSeconds as Int / (60 * 60);
+        let seconds:NSInteger = elapsedSeconds as Int % 60;
+        let minutes:NSInteger = (elapsedSeconds as Int / 60) % 60;
+        //var hours:NSInteger = elapsedSeconds as Int / (60 * 60);
         var result:NSString = NSString(format: "%02i:%03i", minutes, seconds)
-        println(result)
+        print(result, terminator: "")
         result = result.stringByReplacingOccurrencesOfString("-", withString: "")
         label.text = result as String
     }
     
     func errorHappened(error: NSError) {
-        println(error)
+        print(error, terminator: "")
         errorLabels()
     }
     
