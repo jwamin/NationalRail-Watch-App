@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0355D71C95D3CB0007C3F5 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE0355D61C95D3CB0007C3F5 /* test.xml */; };
 		FE2E43321A3DB2CF0081CA4D /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E43311A3DB2CF0081CA4D /* key.swift */; };
 		FE2E43331A3DB2CF0081CA4D /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E43311A3DB2CF0081CA4D /* key.swift */; };
 		FE5BE6C61A3A2A3E0081C767 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BE6C51A3A2A3E0081C767 /* request.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE0355D61C95D3CB0007C3F5 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = test.xml; path = ../../../../../Desktop/test.xml; sourceTree = "<group>"; };
 		FE27A8AF1AFE954D00A5DCFC /* Windsor Trains WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Windsor Trains WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		FE27A8B01AFE989500A5DCFC /* Windsor Trains.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Windsor Trains.entitlements"; sourceTree = "<group>"; };
 		FE2E43311A3DB2CF0081CA4D /* key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = key.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				FE7194481A38C0E900BDF4E8 /* AppDelegate.swift */,
 				FE71944A1A38C0E900BDF4E8 /* ViewController.swift */,
 				FE5BE6C51A3A2A3E0081C767 /* request.swift */,
+				FE0355D61C95D3CB0007C3F5 /* test.xml */,
 				FE71944C1A38C0E900BDF4E8 /* Main.storyboard */,
 				FE71944F1A38C0E900BDF4E8 /* Images.xcassets */,
 				FE7194511A38C0E900BDF4E8 /* LaunchScreen.xib */,
@@ -508,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE71944E1A38C0E900BDF4E8 /* Main.storyboard in Resources */,
+				FE0355D71C95D3CB0007C3F5 /* test.xml in Resources */,
 				FE7194531A38C0E900BDF4E8 /* LaunchScreen.xib in Resources */,
 				FE7194501A38C0E900BDF4E8 /* Images.xcassets in Resources */,
 				FED1F1251A38FD0900FD3E0C /* request.xml in Resources */,

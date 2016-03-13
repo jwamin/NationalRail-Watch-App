@@ -19,6 +19,8 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
     var completedRequests = 0
     
+    let elemPrefix = "lt2:"
+    
     var requestNumber = 0
     
     var requestedRequests = 1
@@ -177,6 +179,8 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
     func parserInit(MyData:NSData) -> Void{
         let d = MyData
+        let converted = NSString(data: d, encoding: NSUTF8StringEncoding)
+        print(converted)
         parser = NSXMLParser(data: d)
         parser.delegate = self
         parser.parse()
@@ -222,14 +226,14 @@ class NationalRailRequest: NSObject, NSURLConnectionDelegate, NSXMLParserDelegat
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-        if(elementName=="std"){
+        if(elementName==(elemPrefix+"std")){
             if (foundTrain != true){
                 thisTrain["nextTrain"] = foundValue
                 foundTrain=true
             }
             services[requestNumber].append(foundValue)
             print(services, terminator: "")
-        } else if (elementName=="locationName" && !foundSname){
+        } else if (elementName == (elemPrefix+"locationName") && !foundSname){
             thisTrain["sname"] = foundValue
             foundSname = true
         }

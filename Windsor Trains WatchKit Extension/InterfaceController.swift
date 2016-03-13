@@ -244,7 +244,7 @@ class MapController: WKInterfaceController {
         super.awakeWithContext(context)
         
         if (context!.index==1){
-        stationString = "Windsor & Eton Riverside"
+        stationString = "Windsor & Eton\n Riverside"
         self.setTitle("WNR")
         lat = 51.485846
         long = -0.606179
